@@ -1,0 +1,35 @@
+<Shell
+    x:Class="ProlanceMaui.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:ProlanceMaui"
+    xmlns:pages="clr-namespace:ProlanceMaui.Pages"
+    Shell.FlyoutBehavior="Disabled">
+
+    <TabBar >
+        <Tab Title="HOME" >
+            <ShellContent
+                Title="DASHBOARD"
+                ContentTemplate="{DataTemplate local:MainPage}"
+                Route="MainPage" />
+        </Tab>
+        <Tab Title="CATEGORIES" >
+            <ShellContent
+                Title="CATEGORIES"
+                ContentTemplate="{DataTemplate pages:CategoriesPage}"
+            />
+        </Tab>
+        <Tab Title="SERVICES">
+            <ShellContent
+                Title="SERVICES"
+                ContentTemplate="{DataTemplate pages:ServicesPage}"
+             />
+        </Tab>
+        <Tab Title="USERS">
+            <ShellContent
+                  Title="USERS"
+                ContentTemplate="{DataTemplate pages:ServicesPage}"
+             />
+        </Tab>
+    </TabBar>
+</Shell>

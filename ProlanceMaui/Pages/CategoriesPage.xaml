@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ProlanceMaui.Pages.CategoriesPage"
+             Title="CategoriesPage">
+    <StackLayout>
+
+
+        <Button Margin="10" Text="ADD CATEGORY" HorizontalOptions="Start" x:Name="BtnAddCategory" Clicked="BtnAddCategory_Clicked" HeightRequest="35" />
+
+        <Grid VerticalOptions="FillAndExpand">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Frame Margin="20" VerticalOptions="FillAndExpand">
+                
+                    <CollectionView EmptyView="No Data" 
+                          x:Name="ServiceCategory" 
+                          ItemsUpdatingScrollMode="KeepLastItemInView"
+                          ItemsSource="{Binding Categories}"
+                                    HorizontalOptions="FillAndExpand"
+                                    VerticalOptions="FillAndExpand"
+                                    ItemsLayout="VerticalGrid, 5"
+                                    ItemSizingStrategy="MeasureAllItems"
+                          >
+                        
+                        <CollectionView.ItemTemplate>
+                            <DataTemplate>
+                                <StackLayout>
+                                    <Frame HeightRequest="300" 
+                                    Padding="0"
+                                    HasShadow="True" Margin="3" CornerRadius="7"
+                                    HorizontalOptions="CenterAndExpand">
+                                        <Frame.Background>
+                                            <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
+                                                <GradientStop Color="CadetBlue" Offset="0.1"/>
+                                                <GradientStop Color="CadetBlue" Offset="1.0"/>
+
+                                            </LinearGradientBrush>
+                                        </Frame.Background>
+                                        <Grid>
+                                            <Grid>
+                                                <StackLayout>
+                                                    <ImageButton 
+                                                        HeightRequest="300" 
+                                                        Opacity="0.6"
+                                                        x:Name="ImgService"
+                                                        CommandParameter="{Binding Id}"
+                                                        Clicked="ImgService_Clicked"
+                                                        BackgroundColor="Transparent"
+                                                        Source="{Binding ImgUrl}"
+                                                        Aspect="AspectFill"/>
+                                                </StackLayout>
+                                                <Label Text="{Binding Name}" 
+                                                        FontSize="12"
+                                                        TextColor="White"
+                                                        FontAttributes="Bold" Margin="15,5"
+                                                        VerticalOptions="EndAndExpand"/>
+
+                                            </Grid>
+                                        </Grid>
+                                    </Frame>
+                                </StackLayout>
+                            </DataTemplate>
+                        </CollectionView.ItemTemplate>
+                        <CollectionView.EmptyViewTemplate>
+                            <DataTemplate>
+                                <StackLayout>
+                                    <Frame HeightRequest="300" WidthRequest="250" 
+                                    Padding="0"
+                                    HasShadow="True" Margin="3" CornerRadius="7"
+                                    HorizontalOptions="CenterAndExpand">
+                                        <Frame.Background>
+                                            <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
+                                                <GradientStop Color="CadetBlue" Offset="0.1"/>
+                                                <GradientStop Color="CadetBlue" Offset="1.0"/>
+                                            </LinearGradientBrush>
+                                        </Frame.Background>
+                                        <Grid>
+                                            <Grid>
+                                                <StackLayout>
+                                                    <Label Text="NO CATEGORY ADDED." 
+                                                    FontSize="12"
+                                                    TextColor="White"
+                                                    FontAttributes="Bold" Margin="15,5"
+                                                    VerticalOptions="CenterAndExpand"/>
+                                                </StackLayout>
+
+                                            </Grid>
+                                        </Grid>
+                                    </Frame>
+                                </StackLayout>
+                            </DataTemplate>
+                        </CollectionView.EmptyViewTemplate>
+
+                    </CollectionView>
+            </Frame>
+        </Grid>
+        
+        
+    </StackLayout>
+</ContentPage>

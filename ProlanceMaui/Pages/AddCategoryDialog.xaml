@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ProlanceMaui.Pages.AddCategoryDialog"
+             Title="AddCategoryDialog"
+             NavigationPage.HasBackButton="True"
+             NavigationPage.HasNavigationBar="True"
+             >
+    <StackLayout>
+        <ImageButton Margin="10" Source="left_back_icon.png" HeightRequest="35" WidthRequest="35" HorizontalOptions="Start" x:Name="ImgBack" Clicked="ImgBack_Clicked" />
+        <Frame WidthRequest="500" HorizontalOptions="Center" VerticalOptions="CenterAndExpand">
+            <StackLayout Orientation="Vertical">
+                <Entry Placeholder="CATEGORY NAME" Margin="5" WidthRequest="450"/>
+                <Entry Placeholder="CATEGORY DESCRIPTION" Margin="5"/>
+                <Button Text="SELECT AND IMAGE" BackgroundColor="Grey" 
+                        x:Name="BtnImagePicker"
+                        Clicked="BtnImagePicker_Clicked"
+                        Margin="5" HeightRequest="35" HorizontalOptions="FillAndExpand"/>
+                <StackLayout Orientation="Horizontal">
+                    <Button Text="ADD" HeightRequest="35"/>
+                    <Button Text="CLOSE" BackgroundColor="PaleVioletRed"  HeightRequest="35"/>
+                </StackLayout>
+
+            </StackLayout>
+        </Frame>
+    </StackLayout>
+</ContentPage>

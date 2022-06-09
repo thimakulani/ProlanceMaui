@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ProlanceMaui.Pages.LoginPage"
+             Title="LoginPage"
+             MinimumWidthRequest="500"
+             >
+    <StackLayout VerticalOptions="Center" HorizontalOptions="Center">
+
+        <Frame WidthRequest="500" HorizontalOptions="Start">
+            <StackLayout Orientation="Vertical">
+                <Label Margin="5" Text="LOGIN" />
+                <Entry Placeholder="EMAIL ADDRESS" Margin="5" Keyboard="Email" WidthRequest="450" x:Name="InputEmail"/>
+                <Entry Placeholder="PASSWORD" Margin="5" IsPassword="True" x:Name="InputPassword"/>
+                <Button Text="LOGIN"                         
+                        Margin="5" HeightRequest="35" 
+                        HorizontalOptions="FillAndExpand"
+                        x:Name="BtnLogin"
+                        Clicked="BtnLogin_Clicked"
+                        />
+            </StackLayout>
+        </Frame>
+    </StackLayout>
+</ContentPage>
