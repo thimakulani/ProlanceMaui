@@ -49,7 +49,9 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <None Remove="Resources\Images\categories_icon.png" />
 	  <None Remove="Resources\Images\left_back_icon.png" />
+	  <None Remove="Resources\Images\services_icon.png" />
 	  <None Remove="Resources\Images\splash_image.png" />
 	</ItemGroup>
 

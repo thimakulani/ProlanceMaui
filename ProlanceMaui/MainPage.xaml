@@ -5,68 +5,215 @@
 
     <ScrollView>
 
-        <StackLayout Orientation="Horizontal">
-            <Frame 
-                                    HeightRequest="100"
-                WidthRequest="200"
-                                    Padding="0"
-                                    HasShadow="True" Margin="3" CornerRadius="7"
-                                    HorizontalOptions="Start">
-                <Frame.Background>
-                    <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
-                        <GradientStop Color="CadetBlue" Offset="0.1"/>
-                        <GradientStop Color="CadetBlue" Offset="1.0"/>
+        <Frame BackgroundColor="#d7eaf8" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+            <Grid>
 
-                    </LinearGradientBrush>
-                </Frame.Background>
-                <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+
+                <Frame
+                    HeightRequest="200"
+                    WidthRequest="200"
+                    Padding="0"
+                    Grid.Column="0"
+                    HasShadow="True" Margin="3" CornerRadius="7"
+                    HorizontalOptions="Start">
+                    <Frame.Background>
+                        <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
+                            <GradientStop Color="CadetBlue" Offset="0.1"/>
+                            <GradientStop Color="CadetBlue" Offset="1.0"/>
+
+                        </LinearGradientBrush>
+                    </Frame.Background>
                     <Grid>
-                        <StackLayout>
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="Auto"/>
+                            </Grid.RowDefinitions>
+                            <Label Text="SERVICE PROVIDERS" 
+                                     Grid.Row="0"
+                                     FontSize="12"
+                                     TextColor="White"
+                                     FontAttributes="Bold" 
+                                     Margin="15,5"
+                                     VerticalOptions="StartAndExpand"
+                                />
+                            <Image
+                                Grid.Row="1"
+                                Source="users_icon.png"
+                                />
 
-                        </StackLayout>
-                        <Label Text="{Binding Name}" 
-                                                        FontSize="12"
-                                                        TextColor="White"
-                                                        FontAttributes="Bold" 
-                                                   Margin="15,5"
-                                                        VerticalOptions="StartAndExpand"/>
+                            <Label  
+                                   Grid.Row="2"
+                                     FontSize="12"
+                                     TextColor="White"
+                                     FontAttributes="Bold" 
+                                     Margin="15,5"
+                                     VerticalOptions="StartAndExpand"
+                                   x:Name="CountClients"
+                                />
 
-
+                        </Grid>
                     </Grid>
-                </Grid>
-            </Frame>
+                </Frame>
+                <Frame
+                    HeightRequest="200"
+                    WidthRequest="200"
+                    Padding="0"
+                    Grid.Column="1"
+                    HasShadow="True" Margin="3" CornerRadius="7"
+                    HorizontalOptions="Start">
+                    <Frame.Background>
+                        <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
+                            <GradientStop Color="CadetBlue" Offset="0.1"/>
+                            <GradientStop Color="CadetBlue" Offset="1.0"/>
 
-
-            <Frame 
-                                    HeightRequest="100"
-                                    Padding="0"
-                WidthRequest="200"
-                                    HasShadow="True" Margin="3" CornerRadius="7"
-                                    HorizontalOptions="CenterAndExpand">
-                <Frame.Background>
-                    <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
-                        <GradientStop Color="CadetBlue" Offset="0.1"/>
-                        <GradientStop Color="CadetBlue" Offset="1.0"/>
-
-                    </LinearGradientBrush>
-                </Frame.Background>
-                <Grid>
+                        </LinearGradientBrush>
+                    </Frame.Background>
                     <Grid>
-                        <StackLayout>
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="Auto"/>
+                            </Grid.RowDefinitions>
+                            <Label Text="CLIENTS" 
+                                     Grid.Row="0"
+                                     FontSize="12"
+                                     TextColor="White"
+                                     FontAttributes="Bold" 
+                                     Margin="15,5"
+                                     VerticalOptions="StartAndExpand"
+                                />
+                            <Image
+                                Grid.Row="1"
+                                Source="clients_icon.png"
+                                />
 
-                        </StackLayout>
-                        <Label Text="{Binding Name}" 
-                                                        FontSize="12"
-                                                        TextColor="White"
-                                                        FontAttributes="Bold" 
-                                                   Margin="15,5"
-                                                        VerticalOptions="Start"/>
+                            <Label 
+                                
+                                   Grid.Row="2"
+                                     FontSize="12"
+                                     TextColor="White"
+                                     FontAttributes="Bold" 
+                                     Margin="15,5"
+                                     VerticalOptions="StartAndExpand"
+                                x:Name="CountServiceProviders"
+                                />
 
-
+                        </Grid>
                     </Grid>
-                </Grid>
-            </Frame>
-        </StackLayout>
+                </Frame>
+                <Frame 
+                    Grid.Column="2"
+                    HeightRequest="200"
+                    Padding="0"
+                    WidthRequest="200"
+                    HasShadow="True" Margin="3" CornerRadius="7"
+                    HorizontalOptions="CenterAndExpand">
+                    <Frame.Background>
+                        <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
+                            <GradientStop Color="CadetBlue" Offset="0.1"/>
+                            <GradientStop Color="CadetBlue" Offset="1.0"/>
+
+                        </LinearGradientBrush>
+                    </Frame.Background>
+                    <Grid>
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="Auto"/>
+                            </Grid.RowDefinitions>
+                            <Label Text="SERVICES" 
+                                   Grid.Row="0"
+                                     FontSize="12"
+                                     TextColor="White"
+                                     FontAttributes="Bold" 
+                                     Margin="15,5"
+                                     VerticalOptions="StartAndExpand"
+                                />
+                            <Image
+                                Grid.Row="1"
+                                Source="services_icon.png"
+                                />
+
+                            <Label
+                                   Grid.Row="2"
+                                     FontSize="12"
+                                     TextColor="White"
+                                     FontAttributes="Bold" 
+                                     Margin="15,5"
+                                     VerticalOptions="StartAndExpand"
+                                   x:Name="CountServices"
+                                />
+
+
+                        </Grid>
+                    </Grid>
+                </Frame>
+
+                <Frame 
+                    Grid.Column="3"
+                    HeightRequest="200"
+                    Padding="0"
+                    WidthRequest="200"
+                    HasShadow="True" Margin="3" CornerRadius="7"
+                    HorizontalOptions="CenterAndExpand">
+                    <Frame.Background>
+                        <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
+                            <GradientStop Color="CadetBlue" Offset="0.1"/>
+                            <GradientStop Color="CadetBlue" Offset="1.0"/>
+
+                        </LinearGradientBrush>
+                    </Frame.Background>
+                    <Grid>
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="Auto"/>
+                            </Grid.RowDefinitions>
+                            <Label Text="SERVICE CATEGORIES" 
+                                 Grid.Row="0"
+                                     FontSize="12"
+                                     TextColor="White"
+                                     FontAttributes="Bold" 
+                                     Margin="15,5"
+                                     VerticalOptions="StartAndExpand"
+                                  
+                                />
+                            <Image
+                                Grid.Row="1"
+                                Source="categories_icon.png"
+                                />
+
+                            <Label  
+                                   Grid.Row="2"
+                                     FontSize="12"
+                                     TextColor="White"
+                                     FontAttributes="Bold" 
+                                     Margin="15,5"
+                                     VerticalOptions="StartAndExpand"
+                                    x:Name="CountServiceCategories"
+                                />
+
+
+                        </Grid>
+                    </Grid>
+                </Frame>
+            </Grid>
+        </Frame>
 
     </ScrollView>
 

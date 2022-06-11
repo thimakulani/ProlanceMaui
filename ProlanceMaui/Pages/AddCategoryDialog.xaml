@@ -12,8 +12,8 @@
         <ImageButton Margin="10" Source="left_back_icon.png" HeightRequest="35" WidthRequest="35" HorizontalOptions="Start" x:Name="ImgBack" Clicked="ImgBack_Clicked" />
         <Frame WidthRequest="500" HorizontalOptions="Center" VerticalOptions="CenterAndExpand">
             <StackLayout Orientation="Vertical">
-                <Entry Placeholder="CATEGORY NAME" Margin="5" WidthRequest="450"/>
-                <Entry Placeholder="CATEGORY DESCRIPTION" Margin="5"/>
+                <Entry Placeholder="CATEGORY NAME" Margin="5" WidthRequest="450" x:Name="InputCategory"/>
+                <Entry Placeholder="CATEGORY DESCRIPTION" Margin="5" x:Name="InputDescription"/>
                 <Button Text="SELECT AND IMAGE" BackgroundColor="Grey" 
                         x:Name="BtnImagePicker"
                         Clicked="BtnImagePicker_Clicked"

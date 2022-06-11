@@ -18,6 +18,8 @@ public partial class LoginPage : ContentPage
             var auth = await authProvider.SignInWithEmailAndPasswordAsync(InputEmail.Text.Trim(), InputPassword.Text.Trim());
             if (auth.User != null)
             {
+                
+                await SecureStorage.Default.SetAsync("token", auth.FirebaseToken);
                 App.Current.MainPage = new AppShell();
             }
         }

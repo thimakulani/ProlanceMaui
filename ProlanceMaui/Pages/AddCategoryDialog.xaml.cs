@@ -8,17 +8,45 @@ public partial class AddCategoryDialog : ContentPage
 	public AddCategoryDialog()
 	{
 		InitializeComponent();
-	}
-
-    private void Add()
+        _ = getToken();
+    }
+    private async Task getToken()
     {
-        FirebaseConnect dbconnect = new FirebaseConnect();
-        var storage = dbconnect.GetFirebaseStorage(token);
-        string name = Guid.NewGuid().ToString();
-        var stream = File.Open(path, FileMode.Open);
-        var result_storage = storage.Child(name)
-            .PutAsync(stream);
-        
+        token = await SecureStorage.Default.GetAsync("token");
+    }
+    private async Task Add()
+    {
+        try
+        {
+            
+            FirebaseConnect dbconnect = new FirebaseConnect();
+            var storage = dbconnect.GetFirebaseStorage(token);
+            string name = Guid.NewGuid().ToString();
+            var stream = File.Open(path, FileMode.Open);
+            var result_storage = storage.Child(name)
+                .PutAsync(stream);
+            result_storage.Progress.ProgressChanged += (a, b) =>
+            {
+
+            };
+            var url = await result_storage;
+
+            Dictionary<string, object> map = new Dictionary<string, object>()
+                    {
+                        {"name", InputCategory.Text.Trim().ToUpper() },
+                        {"description", InputDescription.Text.Trim().ToUpper() },
+                        {"download_url", url },
+                    };
+            await dbconnect.GetFirestoreDBconnection()
+                .Collection("CATEGORIES")
+                .AddAsync(map);
+            await DisplayAlert("SUCCESS", "SUCCESSFULLY ADDED", "Got it");
+        }
+        catch (Exception ex)
+        {
+            await DisplayAlert("ERROR", ex.Message, "Got it");
+        }
+
     }
     private void BtnImagePicker_Clicked(object sender, EventArgs e)
     {
@@ -35,12 +63,9 @@ public partial class AddCategoryDialog : ContentPage
             {
                 path = photo.FullPath;
                 // save the file into local storage
-                string localFilePath = Path.Combine(FileSystem.CacheDirectory, photo.FileName);
+                BtnImagePicker.Text = Path.Combine(FileSystem.CacheDirectory, photo.FileName);
 
-                using Stream sourceStream = await photo.OpenReadAsync();
-                using FileStream localFileStream = File.OpenWrite(localFilePath);
-
-                await sourceStream.CopyToAsync(localFileStream);
+                
             }
         }
     }
