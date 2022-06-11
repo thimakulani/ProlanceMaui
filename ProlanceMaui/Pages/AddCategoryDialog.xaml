@@ -6,7 +6,9 @@
              NavigationPage.HasBackButton="True"
              NavigationPage.HasNavigationBar="True"
              >
-    <StackLayout>
+    <StackLayout
+        BackgroundColor="{StaticResource Primary}"
+        >
         <ImageButton Margin="10" Source="left_back_icon.png" HeightRequest="35" WidthRequest="35" HorizontalOptions="Start" x:Name="ImgBack" Clicked="ImgBack_Clicked" />
         <Frame WidthRequest="500" HorizontalOptions="Center" VerticalOptions="CenterAndExpand">
             <StackLayout Orientation="Vertical">
@@ -17,7 +19,7 @@
                         Clicked="BtnImagePicker_Clicked"
                         Margin="5" HeightRequest="35" HorizontalOptions="FillAndExpand"/>
                 <StackLayout Orientation="Horizontal">
-                    <Button Text="ADD" HeightRequest="35"/>
+                    <Button Text="ADD" HeightRequest="35" x:Name="BtnAddCat" Clicked="BtnAddCat_Clicked"/>
                     <Button Text="CLOSE" BackgroundColor="PaleVioletRed"  HeightRequest="35"/>
                 </StackLayout>
 

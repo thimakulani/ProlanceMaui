@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ProlanceMaui.Pages.AddServicePage"
+             Title="AddServicePage">
+    <StackLayout
+        BackgroundColor="{StaticResource Primary}"
+        >
+        <ImageButton Margin="10" Source="left_back_icon.png" BackgroundColor="Transparent" HeightRequest="35" WidthRequest="35"
+                     HorizontalOptions="Start" x:Name="ImgBack" Clicked="ImgBack_Clicked" />
+        <Frame WidthRequest="500" HorizontalOptions="Center" VerticalOptions="CenterAndExpand">
+            <StackLayout Orientation="Vertical">
+                <Entry Placeholder="SERVICE NAME" Margin="5" x:Name="InputServiceName" WidthRequest="450"/>
+                <Picker Margin="5" x:Name="ServiceCategory" ItemsSource="{Binding Categories}" Title="SELECT A CATEGORY" HorizontalOptions="FillAndExpand" />
+
+                <StackLayout Orientation="Horizontal">
+                    <Button Text="ADD" HeightRequest="35" x:Name="BtnAddService" Clicked="BtnAddService_Clicked"/>
+                </StackLayout>
+
+            </StackLayout>
+        </Frame>
+    </StackLayout>
+</ContentPage>

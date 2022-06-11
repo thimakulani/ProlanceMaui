@@ -18,6 +18,7 @@ public partial class AddCategoryDialog : ContentPage
         var stream = File.Open(path, FileMode.Open);
         var result_storage = storage.Child(name)
             .PutAsync(stream);
+        
     }
     private void BtnImagePicker_Clicked(object sender, EventArgs e)
     {
@@ -46,5 +47,10 @@ public partial class AddCategoryDialog : ContentPage
     private async void ImgBack_Clicked(object sender, EventArgs e)
     {
         await Navigation.PopModalAsync();
+    }
+
+    private void BtnAddCat_Clicked(object sender, EventArgs e)
+    {
+        Add();
     }
 }

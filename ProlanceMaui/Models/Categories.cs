@@ -16,7 +16,7 @@ namespace ProlanceMaui.Models
         public string Name { get; set; }
         [FirestoreProperty("description")]
         public string Description { get; set; }
-        [FirestoreProperty("imageUrl")]
+        [FirestoreProperty("download_url")]
         public string ImgUrl { get; set; }
     }
 }

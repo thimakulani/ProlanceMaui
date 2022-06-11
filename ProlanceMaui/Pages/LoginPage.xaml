@@ -5,11 +5,20 @@
              Title="LoginPage"
              MinimumWidthRequest="500"
              >
-    <StackLayout VerticalOptions="Center" HorizontalOptions="Center">
+    <StackLayout >
+        <StackLayout.Background>
+            <LinearGradientBrush>
+                <GradientStop Color="#265457"
+                          Offset="0.1" />
+                <GradientStop Color="CadetBlue"
+                          Offset="1.0" />
+            </LinearGradientBrush>
+        </StackLayout.Background>
 
-        <Frame WidthRequest="500" HorizontalOptions="Start">
+        <Frame WidthRequest="500" HorizontalOptions="Center" VerticalOptions="CenterAndExpand" CornerRadius="5" HasShadow="True">
             <StackLayout Orientation="Vertical">
-                <Label Margin="5" Text="LOGIN" />
+                <Image Source="splash_image.png" WidthRequest="150" HeightRequest="150" />
+                <Label Margin="5" Text="LOGIN" FontSize="35" />
                 <Entry Placeholder="EMAIL ADDRESS" Margin="5" Keyboard="Email" WidthRequest="450" x:Name="InputEmail"/>
                 <Entry Placeholder="PASSWORD" Margin="5" IsPassword="True" x:Name="InputPassword"/>
                 <Button Text="LOGIN"                         

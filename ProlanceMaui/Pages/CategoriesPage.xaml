@@ -6,8 +6,12 @@
     <StackLayout>
 
 
-        <Button Margin="10" Text="ADD CATEGORY" HorizontalOptions="Start" x:Name="BtnAddCategory" Clicked="BtnAddCategory_Clicked" HeightRequest="35" />
 
+        <Frame BackgroundColor="#d7eaf8" Margin="20,10,20,10" Padding="3">
+            
+            <Button Margin="10" Text="ADD CATEGORY" HorizontalOptions="Start" x:Name="BtnAddCategory" Clicked="BtnAddCategory_Clicked" HeightRequest="35" />
+        </Frame>
+        
         <Grid VerticalOptions="FillAndExpand">
             <Grid.RowDefinitions>
                 <RowDefinition Height="*" />
@@ -15,17 +19,21 @@
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*" />
             </Grid.ColumnDefinitions>
-            <Frame Margin="20" VerticalOptions="FillAndExpand">
+            <Frame Margin="20,10,20,10" VerticalOptions="FillAndExpand" Padding="3" BackgroundColor="#d7eaf8">
                 
                     <CollectionView EmptyView="No Data" 
                           x:Name="ServiceCategory" 
                           ItemsUpdatingScrollMode="KeepLastItemInView"
+                                    FlowDirection="MatchParent"
+                                    
                           ItemsSource="{Binding Categories}"
                                     HorizontalOptions="FillAndExpand"
                                     VerticalOptions="FillAndExpand"
-                                    ItemsLayout="VerticalGrid, 5"
-                                    ItemSizingStrategy="MeasureAllItems"
+                                    
                           >
+                    <CollectionView.ItemsLayout>
+                        <GridItemsLayout Orientation="Vertical" HorizontalItemSpacing="10" VerticalItemSpacing="10" Span="5" />
+                    </CollectionView.ItemsLayout>
                         
                         <CollectionView.ItemTemplate>
                             <DataTemplate>

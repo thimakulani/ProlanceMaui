@@ -28,7 +28,7 @@
         <Tab Title="USERS">
             <ShellContent
                   Title="USERS"
-                ContentTemplate="{DataTemplate pages:ServicesPage}"
+                ContentTemplate="{DataTemplate pages:UsersPage}"
              />
         </Tab>
     </TabBar>
